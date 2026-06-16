@@ -71,7 +71,7 @@ const Hero = () => {
       {Navbar && <Navbar />}
 
       {/* Centered Hero Content (z-10) */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto pt-24 pb-4">
+      <div className="relative z-10 flex-1 shrink-0 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto pt-24 pb-4">
         {/* Badge */}
         {motion ? (
           <motion.div
@@ -237,7 +237,7 @@ const Hero = () => {
       {motion ? (
         <motion.div
           {...animationProps(1.4)}
-          className="relative z-10 flex flex-col items-center gap-2 md:gap-4 pb-6 md:pb-8"
+          className="relative z-10 flex flex-col items-center gap-2 md:gap-4 pb-6 md:pb-8 shrink-0"
         >
           <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white/95 font-body">
             Collaborating with top aerospace pioneers globally
@@ -254,7 +254,7 @@ const Hero = () => {
           </div>
         </motion.div>
       ) : (
-        <div className="relative z-10 flex flex-col items-center gap-2 md:gap-4 pb-6 md:pb-8">
+        <div className="relative z-10 flex flex-col items-center gap-2 md:gap-4 pb-6 md:pb-8 shrink-0">
           <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white/95 font-body">
             Collaborating with top aerospace pioneers globally
           </div>
