@@ -1,0 +1,11 @@
+{
+  "name": "cinematic-space-landing-page",
+  "version": "1.0.0",
+  "description": "Cinematic Space-Travel Landing Page built with React, Tailwind CSS, and Framer Motion.",
+  "scripts": {
+    "dev": "npx -y http-server -p 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
