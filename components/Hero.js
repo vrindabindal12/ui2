@@ -56,10 +56,22 @@ const Hero = () => {
     transition: { duration: 0.6, delay, ease: "easeOut" }
   });
 
-  const HeroContent = () => (
-    <div className="relative z-10 flex-1 flex flex-col justify-between h-full pt-28">
-      {/* Centered Hero Content */}
-      <div className="flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto">
+  return (
+    <section id="home" className="relative min-h-screen w-full overflow-hidden bg-black flex flex-col justify-between">
+      {/* Background Video (z-0) */}
+      {FadingVideo && (
+        <FadingVideo
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_080021_d598092b-c4c2-4e53-8e46-94cf9064cd50.mp4"
+          className="absolute left-1/2 top-0 -translate-x-1/2 object-cover object-top z-0"
+          style={{ width: "120%", height: "120%" }}
+        />
+      )}
+
+      {/* Navbar (z-50) */}
+      {Navbar && <Navbar />}
+
+      {/* Centered Hero Content (z-10) */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto pt-24 pb-4">
         {/* Badge */}
         {motion ? (
           <motion.div
@@ -85,7 +97,7 @@ const Hero = () => {
         )}
 
         {/* Headline */}
-        <div className="mt-6">
+        <div className="mt-2 md:mt-4">
           {BlurText ? (
             <BlurText
               text="Venture Past Our Sky Across the Universe"
@@ -102,21 +114,21 @@ const Hero = () => {
         {motion ? (
           <motion.p
             {...animationProps(0.8)}
-            className="mt-4 text-sm md:text-base text-white/80 max-w-2xl font-body font-light leading-tight"
+            className="mt-2 md:mt-3 text-sm md:text-base text-white/80 max-w-2xl font-body font-light leading-tight"
           >
             Discover the universe in ways once unimaginable. Our pioneering vessels and breakthrough engineering bring deep-space exploration within reach—secure and extraordinary.
           </motion.p>
         ) : (
-          <p className="mt-4 text-sm md:text-base text-white/80 max-w-2xl font-body font-light leading-tight">
+          <p className="mt-2 md:mt-3 text-sm md:text-base text-white/80 max-w-2xl font-body font-light leading-tight">
             Discover the universe in ways once unimaginable. Our pioneering vessels and breakthrough engineering bring deep-space exploration within reach—secure and extraordinary.
           </p>
         )}
 
-        {/* CTAs */}
+        {/* CTA Row */}
         {motion ? (
           <motion.div
             {...animationProps(1.1)}
-            className="flex items-center gap-6 mt-6"
+            className="flex items-center gap-6 mt-4 md:mt-5"
           >
             <button className="liquid-glass-strong hover:scale-105 rounded-full px-5 py-2.5 text-sm font-medium text-white flex items-center gap-2 transition-all duration-300">
               Start Your Voyage
@@ -133,7 +145,7 @@ const Hero = () => {
             </a>
           </motion.div>
         ) : (
-          <div className="flex items-center gap-6 mt-6">
+          <div className="flex items-center gap-6 mt-4 md:mt-5">
             <button className="liquid-glass-strong hover:scale-105 rounded-full px-5 py-2.5 text-sm font-medium text-white flex items-center gap-2 transition-all duration-300">
               Start Your Voyage
               {ArrowUpRight && <ArrowUpRight className="h-5 w-5" />}
@@ -154,65 +166,65 @@ const Hero = () => {
         {motion ? (
           <motion.div
             {...animationProps(1.3)}
-            className="flex flex-col sm:flex-row items-stretch gap-4 mt-8"
+            className="flex flex-col sm:flex-row items-stretch gap-4 mt-5 md:mt-6"
           >
             {/* Card 1 */}
-            <div className="liquid-glass p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
-              <div className="mb-6">
+            <div className="liquid-glass p-4 md:p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
+              <div className="mb-4 md:mb-6">
                 <ClockIcon />
               </div>
               <div>
-                <span className="font-heading italic text-white text-4xl tracking-[-1px] leading-none">
+                <span className="font-heading italic text-white text-3xl md:text-4xl tracking-[-1px] leading-none">
                   34.5 Min
                 </span>
-                <p className="text-xs text-white/70 font-body font-light mt-2">
+                <p className="text-xs text-white/70 font-body font-light mt-1 md:mt-2">
                   Average Videos Watch Time
                 </p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="liquid-glass p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
-              <div className="mb-6">
+            <div className="liquid-glass p-4 md:p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
+              <div className="mb-4 md:mb-6">
                 <GlobeIcon />
               </div>
               <div>
-                <span className="font-heading italic text-white text-4xl tracking-[-1px] leading-none">
+                <span className="font-heading italic text-white text-3xl md:text-4xl tracking-[-1px] leading-none">
                   2.8B+
                 </span>
-                <p className="text-xs text-white/70 font-body font-light mt-2">
+                <p className="text-xs text-white/70 font-body font-light mt-1 md:mt-2">
                   Users Across the Globe
                 </p>
               </div>
             </div>
           </motion.div>
         ) : (
-          <div className="flex flex-col sm:flex-row items-stretch gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row items-stretch gap-4 mt-5 md:mt-6">
             {/* Card 1 */}
-            <div className="liquid-glass p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
-              <div className="mb-6">
+            <div className="liquid-glass p-4 md:p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
+              <div className="mb-4 md:mb-6">
                 <ClockIcon />
               </div>
               <div>
-                <span className="font-heading italic text-white text-4xl tracking-[-1px] leading-none">
+                <span className="font-heading italic text-white text-3xl md:text-4xl tracking-[-1px] leading-none">
                   34.5 Min
                 </span>
-                <p className="text-xs text-white/70 font-body font-light mt-2">
+                <p className="text-xs text-white/70 font-body font-light mt-1 md:mt-2">
                   Average Videos Watch Time
                 </p>
               </div>
             </div>
 
             {/* Card 2 */}
-            <div className="liquid-glass p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
-              <div className="mb-6">
+            <div className="liquid-glass p-4 md:p-5 w-[220px] rounded-[1.25rem] flex flex-col justify-between items-start text-left">
+              <div className="mb-4 md:mb-6">
                 <GlobeIcon />
               </div>
               <div>
-                <span className="font-heading italic text-white text-4xl tracking-[-1px] leading-none">
+                <span className="font-heading italic text-white text-3xl md:text-4xl tracking-[-1px] leading-none">
                   2.8B+
                 </span>
-                <p className="text-xs text-white/70 font-body font-light mt-2">
+                <p className="text-xs text-white/70 font-body font-light mt-1 md:mt-2">
                   Users Across the Globe
                 </p>
               </div>
@@ -221,16 +233,16 @@ const Hero = () => {
         )}
       </div>
 
-      {/* Partners section at the bottom */}
+      {/* Partners Row (bottom) */}
       {motion ? (
         <motion.div
           {...animationProps(1.4)}
-          className="flex flex-col items-center gap-4 pb-8"
+          className="relative z-10 flex flex-col items-center gap-2 md:gap-4 pb-6 md:pb-8"
         >
           <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white/95 font-body">
             Collaborating with top aerospace pioneers globally
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 md:gap-x-16 gap-y-2 mt-2 px-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-12 md:gap-x-16 gap-y-2 mt-1 px-4">
             {["Aeon", "Vela", "Apex", "Orbit", "Zeno"].map((name) => (
               <span
                 key={name}
@@ -242,11 +254,11 @@ const Hero = () => {
           </div>
         </motion.div>
       ) : (
-        <div className="flex flex-col items-center gap-4 pb-8">
+        <div className="relative z-10 flex flex-col items-center gap-2 md:gap-4 pb-6 md:pb-8">
           <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white/95 font-body">
             Collaborating with top aerospace pioneers globally
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 md:gap-x-16 gap-y-2 mt-2 px-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-12 md:gap-x-16 gap-y-2 mt-1 px-4">
             {["Aeon", "Vela", "Apex", "Orbit", "Zeno"].map((name) => (
               <span
                 key={name}
@@ -258,25 +270,6 @@ const Hero = () => {
           </div>
         </div>
       )}
-    </div>
-  );
-
-  return (
-    <section id="home" className="relative h-screen w-full overflow-hidden bg-black flex flex-col justify-between">
-      {/* Background Video */}
-      {FadingVideo && (
-        <FadingVideo
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_080021_d598092b-c4c2-4e53-8e46-94cf9064cd50.mp4"
-          className="absolute left-1/2 top-0 -translate-x-1/2 object-cover object-top z-0"
-          style={{ width: "120%", height: "120%" }}
-        />
-      )}
-
-      {/* Fixed Navbar */}
-      {Navbar && <Navbar />}
-
-      {/* Hero Content Overlay */}
-      <HeroContent />
     </section>
   );
 };
